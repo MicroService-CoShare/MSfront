@@ -3,9 +3,14 @@ import React from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import { DeleteOffre } from "../../Service/offre";
+import { useNavigate } from "react-router-dom";
 
 export default function Offres(props) {
-    console.log(props)
+  console.log(props);
+  const history = useNavigate();
+  const handleClick = (offerId) => {
+    history(`/offer/${offerId}`);
+  };
   return (
     <>
       <div
@@ -36,8 +41,12 @@ export default function Offres(props) {
               <Card.Title>{product.name}</Card.Title>
               <Card.Text>{product.description}</Card.Text>
               <Card.Text>{product.status}</Card.Text>
-              <Button variant="danger" onClick={()=>DeleteOffre(product.id)}>Delete</Button>
-        <Button variant="primary" >Update</Button>
+              <Button variant="danger" onClick={() => DeleteOffre(product.id)}>
+                Delete
+              </Button>
+              <Button variant="primary" onClick={() => handleClick(product.id)}>
+                Update
+              </Button>
             </Card.Body>
           </Card>
         ))}
