@@ -6,6 +6,9 @@ import Header from "./components/Header/header";
 const ProviderComponent = lazy(() => import("./components/Provider/"));
 const StoreComponent = lazy(() => import("./components/Store/"));
 const OfferComponent = lazy(() => import("./components/Offre/"));
+
+const ReclamationComponent = lazy(() => import("./components/reclamation"));
+
 const Home = lazy(() => import("./components/Home/"));
 const NotFound = lazy(() => import("./components/NotFound"));
 
@@ -19,6 +22,8 @@ const AppRoutes = () => {
           <Route path="/store" element={<StoreComponent />} />
           <Route path="/offres" element={<OfferComponent />} />
           <Route path="/provider" element={<ProviderComponent />} />
+          <Route path="/reclamation" element={<ReclamationComponent />} />
+
           <Route path="*" element={<NotFound/>} />
         </Routes> 
       </Suspense>
