@@ -2,6 +2,7 @@ import "./App.css";
 import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/header";
+import OffreForm from "./components/Offre_provider/ProviderForm";
 
 const ProviderComponent = lazy(() => import("./components/Provider/"));
 const StoreComponent = lazy(() => import("./components/Store/"));
@@ -19,6 +20,7 @@ const AppRoutes = () => {
           <Route path="/store" element={<StoreComponent />} />
           <Route path="/offres" element={<OfferComponent />} />
           <Route path="/provider" element={<ProviderComponent />} />
+          <Route path="/createoffer" element={<OffreForm />} />
           <Route path="*" element={<NotFound/>} />
         </Routes> 
       </Suspense>
