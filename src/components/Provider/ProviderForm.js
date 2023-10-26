@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { addProvider } from "../../Service/providers";
@@ -15,11 +15,11 @@ export default function ProviderForm() {
     };
     console.log(Provider);
     addProvider(Provider);
-   
-    setLabel('');
-    setDescription('');
-    setImage('');
-  }
+
+    setLabel("");
+    setDescription("");
+    setImage("");
+  };
 
   return (
     <>
@@ -54,18 +54,18 @@ export default function ProviderForm() {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Image</Form.Label>
             <Form.Control
-              type="number"
+              type="text"
               placeholder="Enter name"
               value={image}
               onChange={(e) => setImage(e.target.value)}
             />
           </Form.Group>
-          
+
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
             <Form.Check type="checkbox" label="Check me out" />
           </Form.Group>
           <Button variant="primary" type="submit">
-          Add Provider
+            Add Provider
           </Button>
         </Form>
       </div>
