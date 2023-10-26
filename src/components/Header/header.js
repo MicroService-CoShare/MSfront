@@ -13,6 +13,8 @@ export default function header() {
             <Nav.Link href="store">Store</Nav.Link>
             <Nav.Link href="provider">Provider</Nav.Link>
             <Nav.Link href="reclamation">reclamation</Nav.Link>
+            <Nav.Link href="addReclamation">ajouter reclamation</Nav.Link>
+
             <Nav.Link href="404">404</Nav.Link>
           
           

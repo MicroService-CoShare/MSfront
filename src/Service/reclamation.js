@@ -26,3 +26,17 @@ export const DeleteReclamtion = async (id) => {
       console.log(error);
     }
 }
+
+export const addProvider = async (provider) => {
+    try {
+      console.log(provider);
+      const headers = {
+        Authorization: `Bearer ${token} `, // Assuming it's a Bearer token
+      };
+      let response = await axios.post(API_URL, provider, { headers });
+  
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
