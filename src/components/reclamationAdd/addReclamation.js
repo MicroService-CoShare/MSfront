@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { createoffer } from "../../Service/reclamation";
+import { addReclamation, createoffer } from "../../Service/reclamation";
 export default function ReclamationForm() {
   const [name, setname] = useState("");
   const [description, setDescription] = useState("");
@@ -10,16 +10,16 @@ export default function ReclamationForm() {
   const handleSubmit = (e) => {
     e?.preventDefault();
     let Provider = {
-      name: name,
+      titre: name,
       description: description,
-      statu: status,
+      statut: status,
       "priorite": "HAUTE",
       "notesInternes": "Quelques notes internes",
       "feedbackUtilisateur": "Feedback de l'utilisateur",
       "typeReclamation": "TECHNIQUE"
     };
     console.log(Provider);
-    createoffer(Provider);
+    addReclamation(Provider);
     setname("");
     setDescription("");
     setImage("");

@@ -27,7 +27,7 @@ export const DeleteReclamtion = async (id) => {
     }
 }
 
-export const addProvider = async (provider) => {
+export const addReclamation = async (provider) => {
     try {
       console.log(provider);
       const headers = {
