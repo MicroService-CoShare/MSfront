@@ -3,6 +3,7 @@ import React, { lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header/header";
 import OffreForm from "./components/Offre_provider/ProviderForm";
+import ReclamationForm from "./components/reclamationAdd/addReclamation";
 
 
 
@@ -26,7 +27,7 @@ const AppRoutes = () => {
         <Route path="/provider" element={<ProviderComponent />} />
         <Route path="/createoffer" element={<OffreForm />} />
         <Route path="/reclamation" element={<ReclamationComponent />} />
-
+<Route path='/addReclamation' element={<ReclamationForm/>}></Route>
         <Route path="/user/:userId" element={<Productedita />} />
         <Route path="/offer/:offerId" element={<OfferUpdate />} />
 
