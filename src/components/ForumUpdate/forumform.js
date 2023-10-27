@@ -1,25 +1,27 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { addProvider } from "../../Service/providers";
-export default function ProviderForm() {
-  const [label, setLabel] = useState("");
+import { addForum, updateforum } from "../../Service/forum";
+import { useParams } from "react-router-dom";
+
+export default function OfferForum() {
+  const [name, setname] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState("");
+  const [status, setstatus] = useState("");
+  const { forumId } = useParams();
 
   const handleSubmit = (e) => {
     e?.preventDefault();
     let Provider = {
-      label: label,
+      name: name,
       description: description,
-      image: image,
+      status: status,
     };
     console.log(Provider);
-    addProvider(Provider);
-
-    setLabel("");
+    updateforum(Provider, forumId);
+    setname("");
     setDescription("");
-    setImage("");
+    setstatus("");
   };
 
   return (
@@ -35,12 +37,12 @@ export default function ProviderForm() {
       >
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Label</Form.Label>
+            <Form.Label>Title</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter name"
-              value={label}
-              onChange={(e) => setLabel(e.target.value)}
+              value={name}
+              onChange={(e) => setname(e.target.value)}
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -52,13 +54,14 @@ export default function ProviderForm() {
               onChange={(e) => setDescription(e.target.value)}
             />
           </Form.Group>
+          
           <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Image</Form.Label>
+            <Form.Label>Comment</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter name"
-              value={image}
-              onChange={(e) => setImage(e.target.value)}
+              value={status}
+              onChange={(e) => setstatus(e.target.value)}
             />
           </Form.Group>
 

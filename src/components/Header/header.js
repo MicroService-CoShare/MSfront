@@ -16,6 +16,8 @@ export default function header() {
             <Nav.Link href="addReclamation">ajouter reclamation</Nav.Link>
             <Nav.Link href="offres">offres</Nav.Link>
             <Nav.Link href="createoffer">Ajouter offre</Nav.Link>
+            <Nav.Link href="Forum">forums</Nav.Link>
+            <Nav.Link href="addForum">ajouter forum</Nav.Link>
 
             <Nav.Link href="404">404</Nav.Link>
           </Nav>
